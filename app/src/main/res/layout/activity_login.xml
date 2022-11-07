@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity"
+    android:orientation="vertical"
+    android:weightSum="100"
+    >
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_weight="50">
+    
+</TextView>
+
+
+    <EditText
+        android:id="@+id/txtId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:text="아이디"
+        android:hint="아이디"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="1"
+        android:selectAllOnFocus="true"
+        ></EditText>
+
+    <EditText
+        android:id="@+id/txtPw"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:text="비밀번호"
+
+        android:hint="비밀번호"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="1"
+        android:selectAllOnFocus="true"
+        ></EditText>
+ 
+    
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+   android:layout_gravity="center_horizontal"
+        >
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="로그인"
+        android:layout_gravity="center_horizontal"
+
+        ></Button>
+    <Button
+
+        android:id="@+id/btnRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       android:text="회원가입"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="30dp"
+
+        ></Button>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
