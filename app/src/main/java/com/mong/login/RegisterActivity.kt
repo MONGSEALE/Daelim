@@ -5,7 +5,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.mong.login.databinding.ActivityRegisterBinding
@@ -23,6 +22,8 @@ class RegisterActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btnRegister2.setOnClickListener{
+            isExistBlack = false
+            isPWSame = false
             id2 = binding.txtId2.text.toString()
             pw2 = binding.txtPw2.text.toString()
             pw_re = binding.txtRePw.text.toString()
