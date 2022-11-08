@@ -1,75 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity"
-    android:orientation="vertical"
-    android:weightSum="100"
-    >
-<TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_weight="50">
-    
-</TextView>
+    tools:context=".LoginActivity">
 
 
     <EditText
         android:id="@+id/txtId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:text="아이디"
-        android:hint="아이디"
         android:layout_gravity="center_horizontal"
         android:layout_weight="1"
+        android:ems="10"
+        android:hint="@string/text_id"
         android:selectAllOnFocus="true"
-        ></EditText>
+        app:layout_constraintBottom_toTopOf="@+id/txtPw"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        app:layout_constraintVertical_chainStyle="packed" />
 
     <EditText
         android:id="@+id/txtPw"
-        android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:text="비밀번호"
-
-        android:hint="비밀번호"
         android:layout_gravity="center_horizontal"
         android:layout_weight="1"
+        android:ems="10"
+        android:hint="@string/text_pw"
         android:selectAllOnFocus="true"
-        ></EditText>
- 
-    
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-   android:layout_gravity="center_horizontal"
-        >
+        app:layout_constraintBottom_toTopOf="@+id/btnLogin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtId"
+        app:layout_constraintVertical_bias="0.5" />
+
     <Button
         android:id="@+id/btnLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="로그인"
         android:layout_gravity="center_horizontal"
+        android:layout_marginStart="1dp"
+        android:text="@string/text_login"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/txtPw"
+        app:layout_constraintTop_toBottomOf="@+id/txtPw"
+        app:layout_constraintVertical_bias="0.5" />
 
-        ></Button>
     <Button
-
         android:id="@+id/btnRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-       android:text="회원가입"
         android:layout_gravity="center_horizontal"
-        android:layout_marginLeft="30dp"
-
-        ></Button>
-
-    </LinearLayout>
-
-
-
-</LinearLayout>
+        android:text="@string/text_register"
+        app:layout_constraintEnd_toEndOf="@+id/txtPw"
+        app:layout_constraintTop_toBottomOf="@+id/txtPw" />
+</androidx.constraintlayout.widget.ConstraintLayout>

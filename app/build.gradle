@@ -8,6 +8,10 @@ android {
     namespace 'com.mong.login'
     compileSdk 32
 
+    buildFeatures{
+        viewBinding true
+    }
+
     defaultConfig {
         applicationId "com.mong.login"
         minSdk 21
@@ -34,6 +38,9 @@ android {
 }
 
 dependencies {
+
+    implementation 'com.naver.maps:map-sdk:3.16.0'
+    implementation 'com.google.android.gms:play-services-location:16.0.0'
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.5.1'

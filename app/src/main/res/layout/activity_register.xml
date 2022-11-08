@@ -1,56 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    tools:context=".RegisterActivity">
 
-
-    <TextView
+    <EditText
+        android:id="@+id/txtRePw"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="180dp"
-        ></TextView>
+        android:layout_gravity="center_horizontal"
+        android:ems="10"
+        android:hint="@string/text_pw_ck"
+        android:selectAllOnFocus="true"
+        app:layout_constraintBottom_toTopOf="@+id/btnRegister2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtPw2" />
+
+    <EditText
+        android:id="@+id/txtPw2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:ems="10"
+        android:hint="@string/text_pw"
+        android:selectAllOnFocus="true"
+        app:layout_constraintBottom_toTopOf="@+id/txtRePw"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtId2" />
 
     <EditText
         android:id="@+id/txtId2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="아이디"
-        android:ems="10"
         android:layout_gravity="center_horizontal"
+        android:ems="10"
+        android:hint="@string/text_id"
         android:selectAllOnFocus="true"
-        ></EditText>
-
-
-    <EditText
-        android:id="@+id/txtPw2"
-        android:layout_marginTop="10dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="비밀번호"
-        android:ems="10"
-        android:layout_gravity="center_horizontal"
-        android:selectAllOnFocus="true"
-        ></EditText>
-
-    <EditText
-        android:id="@+id/txtRePw"
-        android:layout_marginTop="10dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="비밀번호 확인"
-        android:ems="10"
-        android:layout_gravity="center_horizontal"
-        android:selectAllOnFocus="true">
-
-    </EditText>
+        app:layout_constraintBottom_toTopOf="@+id/txtPw2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
 
     <Button
         android:id="@+id/btnRegister2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="회원가입"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="30dp"
-        ></Button>
-</LinearLayout>
+        android:text="@string/text_register"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtRePw" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
