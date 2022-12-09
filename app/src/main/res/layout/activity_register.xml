@@ -7,50 +7,50 @@
     tools:context=".RegisterActivity">
 
     <EditText
-        android:id="@+id/txtRePw"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:ems="10"
-        android:hint="@string/text_pw_ck"
-        android:selectAllOnFocus="true"
-        app:layout_constraintBottom_toTopOf="@+id/btnRegister2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtPw2" />
-
-    <EditText
-        android:id="@+id/txtPw2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:ems="10"
-        android:hint="@string/text_pw"
-        android:selectAllOnFocus="true"
-        app:layout_constraintBottom_toTopOf="@+id/txtRePw"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtId2" />
-
-    <EditText
-        android:id="@+id/txtId2"
+        android:id="@+id/txtId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:ems="10"
         android:hint="@string/text_id"
         android:selectAllOnFocus="true"
-        app:layout_constraintBottom_toTopOf="@+id/txtPw2"
+        app:layout_constraintBottom_toTopOf="@+id/txtPw"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="packed" />
 
+    <EditText
+        android:id="@+id/txtPw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:ems="10"
+        android:hint="@string/text_pw"
+        android:selectAllOnFocus="true"
+        app:layout_constraintBottom_toTopOf="@+id/txtPwRe"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtId" />
+
+    <EditText
+        android:id="@+id/txtPwRe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:ems="10"
+        android:hint="@string/text_pw_ck"
+        android:selectAllOnFocus="true"
+        app:layout_constraintBottom_toTopOf="@+id/btnRegister"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtPw" />
+
     <Button
-        android:id="@+id/btnRegister2"
+        android:id="@+id/btnRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -59,6 +59,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtRePw" />
+        app:layout_constraintTop_toBottomOf="@+id/txtPwRe" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

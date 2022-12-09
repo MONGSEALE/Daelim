@@ -1,12 +1,17 @@
 package com.mong.login
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
+import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.naver.maps.map.LocationTrackingMode
 import com.naver.maps.map.MapFragment
 import com.naver.maps.map.NaverMap
 import com.naver.maps.map.OnMapReadyCallback
+import com.naver.maps.map.overlay.Overlay
 import com.naver.maps.map.util.FusedLocationSource
 
 class MapActivity : AppCompatActivity(), OnMapReadyCallback {
@@ -44,10 +49,24 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
         naverMap.locationSource = locationSource
         naverMap.locationTrackingMode = LocationTrackingMode.Follow
 
+        showUserLocation()
+        openUserProfile()
+    }
+
+    private fun showUserLocation() {
         naverMap.addOnLocationChangeListener { location ->
             nowLat = location.latitude
             nowLng = location.longitude
             Toast.makeText(this, "${nowLat}, ${nowLng}", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun openUserProfile() {
+        val locationOverlay = naverMap.locationOverlay
+        locationOverlay.setOnClickListener {
+            val profile = ProfileActivity(this)
+            profile.show(supportFragmentManager, profile.tag)
+            true
         }
     }
 

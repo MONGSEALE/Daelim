@@ -1,3 +1,4 @@
+
 package com.mong.login
 
 import android.content.DialogInterface
@@ -24,41 +25,31 @@ class LoginActivity : AppCompatActivity() {
             val shared = getSharedPreferences("Register", MODE_PRIVATE)
             val savedId = shared.getString("id", null)
             val savedPw = shared.getString("pw", null)
+            val builder: AlertDialog.Builder = this.let { AlertDialog.Builder(it) }
 
             Toast.makeText(this,"id = ${id}, savedId = $savedId \n" +
                     " pw = ${pw}, savedPw = $savedPw", Toast.LENGTH_SHORT).show()
 
-            if (id == savedId && pw == savedPw) {
-                dialog("success")
+            if (id != savedId && pw != savedPw) {
+                builder.setTitle(R.string.login_fail)
+                builder.setMessage(R.string.login_fail_not_correct)
+                builder.setPositiveButton("확인"){ dialog, id -> }
             } else {
-                dialog("fail")
+                builder.setTitle(R.string.login_success)
+                builder.setMessage(R.string.login_success_correct)
+                builder.setPositiveButton("확인"){ dialog, id ->
+                    val intent = Intent(this, MapActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                }
             }
+            val dialog: AlertDialog = builder.create()
+            dialog.show()
         }
 
         binding.btnRegister.setOnClickListener {
             val intentRegister = Intent(this, RegisterActivity::class.java)
             startActivity(intentRegister)
         }
-    }
-
-    fun dialog(status:String) {
-        val dialog = AlertDialog.Builder(this)
-
-        if (status=="success") {
-            dialog.setTitle("로그인 성공")
-            dialog.setMessage("로그인 되셨습니다.")
-        } else if (status=="fail") {
-            dialog.setTitle("로그인 실패")
-            dialog.setMessage("아이디와 비밀번호를 확인하세요")
-        }
-
-        dialog.setPositiveButton("확인", DialogInterface.OnClickListener { dialog, id ->
-            if (status == "success") {
-                val intentMap = Intent(this, MapActivity::class.java)
-                startActivity(intentMap)
-                finish()
-            }
-        })
-        dialog.show()
     }
 }
